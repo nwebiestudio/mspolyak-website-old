@@ -1,0 +1,127 @@
+html {
+	height: 100%;
+}
+body {
+	margin: 5px;
+	height: 100%;
+	padding: 0px;
+	margin-bottom: 1px;
+	/*font-family: Arial, Helvetica, Sans-Serif;*/
+	line-height: 140%;
+	font-size: 12px;
+	color: black; /*#333333;*/
+	background: #9999cc;
+}
+
+a {
+	color: #130087;/*#ffffff;*/
+}
+a:visited {
+	color: #130087;/*#eeeeff;*/
+}
+a:active {
+	color: #ccccff;
+}
+
+@media (pointer: coarse) {
+  a {
+    padding: .8em 0em;
+  }
+}
+
+h3 {
+	font-size: 120%;
+	text-align: center;
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 100%;
+	margin-bottom: 5px;
+}
+img {
+	border-width: 0px;
+}
+img.book_tn {
+	/*padding-bottom: 3px;*/
+	margin-bottom: 3px;
+}
+
+table {
+	border: 0;
+	border-spacing: 0; /* 'cellspacing=0' equivalent */
+	border-collapse: collapse; /* 'cellspacing=0' for IE 5,6,7 */
+}
+table td, table th
+{
+    /*padding: 1ex 0ex; /* 'cellpadding' equivalent */
+	padding: 0;
+}
+td.menu {
+	padding: 1ex 0ex;
+}
+td.sidebar {
+	min-width: 160px;
+	background: #9999cc;
+	padding: 0px 10px;
+}
+td.main {
+	background: #9999cc;/*#9999cc;*/
+}
+td.right_col {
+	width: 180px;
+	padding-top: 130px;
+	padding-left: 5px;
+	text-align: center;
+}
+td.toc_chapter {
+	font-weight: bold; 
+	font-size: 110%;
+	text-transform: uppercase;
+	padding-top: 1ex;
+	padding-bottom: 0;
+}
+td.toc_chapter_name {
+	padding: 0;
+}
+td.toc_paragraph  {
+	padding: 0 0 0 2ex;
+	/*padding-left: 2ex;*/
+	font-size: 95%;
+}
+td.toc_sub_paragraph  {
+	padding: 0 0 0 4ex;
+	/*padding-left: 4ex;*/
+	font-size: 90%;
+}
+td.toc_sub2_paragraph  {
+	padding: 0 0 0 6ex;
+	font-size: 85%;
+}
+td.toc_entry {
+	text-transform:uppercase;
+	padding-top: 1ex;
+	padding-bottom: 0;
+}
+td.toc_page {
+	text-align: right;
+	padding-left:10px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+p {
+	text-align: justify;
+}
+p.text {
+	text-indent: 2em;
+}
+
+.species_name {
+	font-style: italic;
+}
+
+.book {padding-left: 20px; padding-top: 20px;}
+.book_authors {}
+.book_name {font-weight: bold;}
+.book_imprint {}
