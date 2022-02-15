@@ -1,0 +1,25 @@
+name: CD on push to main
+
+on:
+  push:
+    branches:
+      -main
+      
+jobs:
+  deploy:
+    name: web deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checking for actual files
+        uses: actions/checkout@v2.4.0
+        
+      - name: deploying by FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.FTP_ADDRESS }}
+          username: ${{ secrets.FTP_LOGIN }
+          password: ${{ secrets.FTP_PASSWORD }
+  
+
+
