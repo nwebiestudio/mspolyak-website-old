@@ -1,9 +1,11 @@
 name: CD on push to FTP
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
+  
       
 jobs:
   deploy:
