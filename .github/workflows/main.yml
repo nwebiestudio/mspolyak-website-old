@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: sdf
         run: docker stop mspwebsite
-        working-directory: ../mspweb
     
   build:
     name: image build
@@ -24,7 +23,7 @@ jobs:
           path: .
         
       - name: building
-        run: echo hi
+        run: pwd
     
   
 
