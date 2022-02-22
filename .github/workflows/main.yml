@@ -27,6 +27,9 @@ jobs:
         
       - name: whoami
         run: echo $USER
+        
+      - name: helloworld
+        run: docker run -rm hello-world
     
   
 
