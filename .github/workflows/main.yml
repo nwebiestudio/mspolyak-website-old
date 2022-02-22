@@ -24,6 +24,9 @@ jobs:
         
       - name: building
         run: pwd
+        
+      - name: whoami
+        run: echo $USER
     
   
 
