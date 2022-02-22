@@ -24,10 +24,7 @@ jobs:
           path: .
         
       - name: building
-      
-  deploy:
-    name: image deploy to remote
-    runs-on: self-hosted
+        run: echo hi
     
   
 
