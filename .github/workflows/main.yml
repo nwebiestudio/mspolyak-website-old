@@ -27,7 +27,7 @@ jobs:
         run: docker build -t mspwebsite .
         
       - name: running
-        run: docker run --name mspwebsite -rm -d -p 4000:80 mspwebsite
+        run: docker run --name mspwebsite --rm -d -p 4000:80 mspwebsite
 
     
   
