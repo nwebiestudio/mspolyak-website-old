@@ -7,15 +7,16 @@ jobs:
   stop_prev_cont:
     name: stop previous container
     runs-on: self-hosted
-  
     steps:
-      - name: sdf
+      - name: container stop
         run: docker stop mspwebsite
+        
+      - name: image remove
+        run: docker rmi mspwebsite
     
   build:
     name: image build
     runs-on: self-hosted
-    
     steps:
       - name: checking for actual
         uses: actions/checkout@v2.4.0
@@ -23,13 +24,11 @@ jobs:
           path: .
         
       - name: building
-        run: pwd
+        run: docker build -t mspwebsite .
         
-      - name: whoami
-        run: echo $USER
-        
-      - name: helloworld
-        run: docker run --rm hello-world
+      - name: running
+        run: docker run --name mspwebsite -rm -d -p 4000:80 mspwebsite
+
     
   
 
