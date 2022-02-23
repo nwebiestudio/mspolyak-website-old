@@ -15,7 +15,7 @@ jobs:
         run: docker rmi mspwebsite
     
   build:
-    if: ${{ alvays() }}
+    if: ${{ always() }}
     needs: stop_prev_cont
     name: image build
     runs-on: self-hosted
