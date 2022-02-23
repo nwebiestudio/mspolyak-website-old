@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
       
 jobs:
-  stop_prev_cont:
-    name: stop previous container
+  container_rebuild:
+    name: current cnt -> rebuilded cnt
     runs-on: self-hosted
     steps:
       - name: container stop
@@ -14,19 +14,15 @@ jobs:
       - name: image remove
         run: docker rmi mspwebsite
     
-  build:
-    name: image build
-    runs-on: self-hosted
-    steps:
       - name: checking for actual
         uses: actions/checkout@v2.4.0
         with:
           path: .
         
-      - name: building
+      - name: building new container
         run: docker build -t mspwebsite .
         
-      - name: running
+      - name: running new container
         run: docker run --name mspwebsite --rm -d -p 4000:80 mspwebsite
 
     
