@@ -12,10 +12,10 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: container stop
-        run: docker stop ${{env.IMAGE.NAME}}
+        run: docker stop ${{env.IMAGE_NAME}}
         
       - name: image remove
-        run: docker rmi ${{env.IMAGE.NAME}}
+        run: docker rmi ${{env.IMAGE_NAME}}
     
   build:
     if: ${{ always() }}
@@ -29,10 +29,10 @@ jobs:
           path: .
         
       - name: building
-        run: docker build -t ${{env.IMAGE.NAME}} .
+        run: docker build -t ${{env.IMAGE_NAME}} .
         
       - name: running
-        run: docker run --name ${{env.IMAGE.NAME}} --rm -d -p 4000:80 ${{env.IMAGE.NAME}}
+        run: docker run --name ${{env.IMAGE_NAME}} --rm -d -p 4000:80 ${{env.IMAGE_NAME}}
 
     
   
