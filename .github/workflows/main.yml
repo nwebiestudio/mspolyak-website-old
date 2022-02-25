@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3.6.2
         with:
-          images: ${{ env.Registry }}/${{ env.IMAGE.PATH }}
+          images: ${{ env.Registry }}/${{ env.IMAGE_PATH }}
 
       - name: Build and Push to Packages
         uses: docker/build-push-action@v2.9.0
@@ -42,25 +42,31 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
     
-  remote:
-    if: ${{ always() }}
+  remote_stop:
     needs: build-and-push
-    name: remote-runner
+    name: remote-stopper
     runs-on: self-hosted
     
     steps:
       - name: container stop
-        run: docker stop ${{env.IMAGE.NAME}}
+        run: docker stop ${{env.IMAGE_NAME}}
 
       - name: rmi
-        run: docker rmi ${{env.IMAGE.NAME}}
+        run: docker rmi ${{env.IMAGE_NAME}}
 
+
+  remote_run:
+    if: ${{ always() }}
+    needs: remote_stop
+    name: remote-runner
+    runs-on: self-hosted
+    
+    steps:
       - name: docker pull
-        run: docker pull ${{ env.Registry }}/${{ env.IMAGE.NAME }}
+        run: docker pull ${{ env.Registry }}/${{ env.IMAGE_NAME }}
 
       - name: run
-        run: docker run --name ${{env.IMAGE.NAME}} --rm -d -p 4000:80 ${{env.IMAGE.NAME}}
-    
+        run: docker run --name ${{env.IMAGE_NAME}} --rm -d -p 4000:80 ${{env.IMAGE_NAME}}
   
 
 
