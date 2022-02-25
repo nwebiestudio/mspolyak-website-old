@@ -52,10 +52,6 @@ jobs:
       - name: container stop
         run: docker stop ${{env.IMAGE_NAME}}
 
-      - name: rmi
-        run: docker rmi ${{env.IMAGE_NAME}}
-
-
   remote_run:
     if: ${{ always() }}
     needs: remote_stop
@@ -67,7 +63,7 @@ jobs:
         run: docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
 
       - name: run
-        run: docker run --name ${{env.IMAGE_NAME}} --rm -d -p 4000:80 ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}
+        run: docker run --name ${{env.IMAGE_NAME}} --rm -d -p 4000:80 ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
   
 
 
