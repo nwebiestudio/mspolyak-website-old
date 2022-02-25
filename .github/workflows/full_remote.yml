@@ -1,6 +1,7 @@
 name: Full remote 
 
 env:
+  REGISTRY: ghcr.io
   CONTAINER_NAME: mspolyak-website
   IMAGE_NAME: ${{ github.repository }}
   
@@ -14,6 +15,10 @@ jobs:
     steps:
       - name: container stop
         run: docker stop ${{env.CONTAINER_NAME}}
+        
+      - name: rmi
+        run: docker rmi ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
+
     
   build:
     if: ${{ always() }}
@@ -27,7 +32,7 @@ jobs:
           path: .
         
       - name: building
-        run: docker build -t ${{env.IMAGE_NAME}} .
+        run: docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main .
         
       - name: running
-        run: docker run --name ${{env.CONTAINER_NAME}} --rm -d -p 4000:80 ${{env.IMAGE_NAME}}
+        run: docker run --name ${{env.CONTAINER_NAME}} --rm -d -p 4000:80 ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
