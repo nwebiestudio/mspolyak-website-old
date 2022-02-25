@@ -1,35 +1,63 @@
-name: Full remote 
+name: Github packages
 
 on:
   workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
   
 jobs:
-  stop_prev_cont:
-    name: stop previous container
+  build-and-push:
+    name: GitHub-runner
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+        
+      - name: login
+        uses: docker/login-action@v1.13.0
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extracting metadata
+        id: meta
+        uses: docker/metadata-action@v3.6.2
+        with:
+          images: ${{ env.Registry }}/${{ env.IMAGE.NAME }}
+
+      - name: Build and Push to Packages
+        uses: uses: docker/build-push-action@v2.9.0
+        with:
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+    
+  remote:
+    if: ${{ always() }}
+    needs: build-and-push
+    name: remote-runner
     runs-on: self-hosted
+    
     steps:
       - name: container stop
-        run: docker stop mspwebsite
-        
-      - name: image remove
-        run: docker rmi mspwebsite
-    
-  build:
-    if: ${{ always() }}
-    needs: stop_prev_cont
-    name: image build
-    runs-on: self-hosted
-    steps:
-      - name: checking for actual
-        uses: actions/checkout@v2.4.0
-        with:
-          path: .
-        
-      - name: building
-        run: docker build -t mspwebsite .
-        
-      - name: running
-        run: docker run --name mspwebsite --rm -d -p 4000:80 mspwebsite
+        run: docker stop ${{env.IMAGE.NAME}}
+
+      - name: rmi
+        run: docker rmi ${{env.IMAGE.NAME}}
+
+      - name: docker pull
+        run: docker pull ${{github.actor}}/${{ env.Registry }}/${{ env.IMAGE.NAME }}
+
+      - name: run
+        run: docker run --name ${{env.IMAGE.NAME}} --rm -d -p 4000:80 ${{env.IMAGE.NAME}}
 
     
   
