@@ -1,5 +1,8 @@
 name: Github packages
 
+env:
+  IMAGE_NAME: mspolyak-website
+  
 on:
   workflow_dispatch:
 
@@ -40,6 +43,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
     
   remote:
     if: ${{ always() }}
@@ -59,7 +63,6 @@ jobs:
 
       - name: run
         run: docker run --name ${{env.IMAGE.NAME}} --rm -d -p 4000:80 ${{env.IMAGE.NAME}}
-
     
   
 
