@@ -5,8 +5,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_PATH: ${{ github.repository }}
-  IMAGE_NAME: mspolyak-website
+  IMAGE_NAME: ${{ github.repository }}
+  CONTAINER_NAME: mspolyak-website
 
   
 jobs:
@@ -50,7 +50,10 @@ jobs:
     
     steps:
       - name: container stop
-        run: docker stop ${{env.IMAGE_NAME}}
+        run: docker stop ${{env.CONTAINER_NAME}}
+        
+      - name: rmi
+        run: docker rmi ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
 
   remote_run:
     if: ${{ always() }}
@@ -63,7 +66,7 @@ jobs:
         run: docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
 
       - name: run
-        run: docker run --name ${{env.IMAGE_NAME}} --rm -d -p 4000:80 ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
+        run: docker run --name ${{env.CONTAINER_NAME}} --rm -d -p 4000:80 ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
   
 
 
