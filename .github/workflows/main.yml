@@ -1,8 +1,5 @@
 name: Github packages
-
-env:
-  IMAGE_NAME: mspolyak-website
-  
+ 
 on:
   workflow_dispatch:
 
