@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3.6.2
         with:
-          images: nwebiestudio/${{IMAGE_NAME}}
+          images: nwebiestudio/${{ env.IMAGE_NAME }}
 
       - name: Build and Push to Packages
         uses: docker/build-push-action@v2.9.0
