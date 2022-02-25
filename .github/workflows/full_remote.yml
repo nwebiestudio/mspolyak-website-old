@@ -1,0 +1,33 @@
+name: Full remote 
+
+env:
+  CONTAINER_NAME: mspolyak-website
+  IMAGE_NAME: ${{ github.repository }}
+  
+on:
+  workflow_dispatch:
+  
+jobs:
+  stop_prev_cont:
+    name: stop previous container
+    runs-on: self-hosted
+    steps:
+      - name: container stop
+        run: docker stop ${{env.CONTAINER_NAME}}
+    
+  build:
+    if: ${{ always() }}
+    needs: stop_prev_cont
+    name: image build
+    runs-on: self-hosted
+    steps:
+      - name: checking for actual
+        uses: actions/checkout@v2.4.0
+        with:
+          path: .
+        
+      - name: building
+        run: docker build -t ${{env.IMAGE_NAME}} .
+        
+      - name: running
+        run: docker run --name ${{env.CONTAINER_NAME}} --rm -d -p 4000:80 ${{env.IMAGE_NAME}}
