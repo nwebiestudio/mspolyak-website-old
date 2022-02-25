@@ -9,10 +9,10 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: container stop
-        run: docker stop mspwebsite
+        run: docker stop ${{env.IMAGE.NAME}}
         
       - name: image remove
-        run: docker rmi mspwebsite
+        run: docker rmi ${{env.IMAGE.NAME}}
     
   build:
     if: ${{ always() }}
@@ -26,10 +26,10 @@ jobs:
           path: .
         
       - name: building
-        run: docker build -t mspwebsite .
+        run: docker build -t ${{env.IMAGE.NAME}} .
         
       - name: running
-        run: docker run --name mspwebsite --rm -d -p 4000:80 mspwebsite
+        run: docker run --name ${{env.IMAGE.NAME}} --rm -d -p 4000:80 ${{env.IMAGE.NAME}}
 
     
   
