@@ -64,7 +64,7 @@ jobs:
     
     steps:
       - name: docker pull
-        run: docker pull ${{ env.Registry }}/${{ env.IMAGE_NAME }}
+        run: docker pull ${{ env.Registry }}/${{ env.IMAGE_PATH }}
 
       - name: run
         run: docker run --name ${{env.IMAGE_NAME}} --rm -d -p 4000:80 ${{env.IMAGE_NAME}}
