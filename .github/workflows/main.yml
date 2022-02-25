@@ -67,7 +67,7 @@ jobs:
         run: docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
 
       - name: run
-        run: docker run --name ${{env.IMAGE_NAME}} --rm -d -p 4000:80 ${{env.IMAGE_NAME}}
+        run: docker run --name ${{env.IMAGE_NAME}} --rm -d -p 4000:80 ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}
   
 
 
