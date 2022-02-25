@@ -1,5 +1,8 @@
 name: Full remote 
 
+env:
+  IMAGE_NAME: ${{ github.repository }}
+  
 on:
   workflow_dispatch:
   
