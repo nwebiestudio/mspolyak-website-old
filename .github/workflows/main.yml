@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3.6.2
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and Push to Packages
         uses: docker/build-push-action@v2.9.0
@@ -53,7 +53,7 @@ jobs:
         run: docker stop ${{env.CONTAINER_NAME}}
         
       - name: rmi
-        run: docker rmi ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
+        run: docker rmi ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
 
   remote_run:
     if: ${{ always() }}
@@ -63,10 +63,10 @@ jobs:
     
     steps:
       - name: docker pull
-        run: docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
+        run: docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
 
       - name: run
-        run: docker run --name ${{env.CONTAINER_NAME}} --rm -d -p 4000:80 ${{ env.REGISTRY }}/${{ env.IMAGE_PATH }}:main
+        run: docker run --name ${{env.CONTAINER_NAME}} --rm -d -p 4000:80 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
   
 
 
