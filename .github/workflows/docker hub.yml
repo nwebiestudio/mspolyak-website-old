@@ -1,4 +1,4 @@
-name: Github packages
+name: Docker hub
  
 on:
   workflow_dispatch:
