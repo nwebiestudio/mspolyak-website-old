@@ -57,7 +57,7 @@ jobs:
         run: docker rmi ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
         
       - name: docker rmi
-        if: ${{ steps.ghrmi.failure() }}
+        if: ${{ failure() }}
         run: docker rmi ${{ env.LOGIN }}/${{ env.CONTAINER_NAME }}:main
 
   remote_run:
