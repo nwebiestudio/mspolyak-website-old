@@ -1,0 +1,25 @@
+name: Test CI 
+
+env:
+  REGISTRY: ghcr.io
+  CONTAINER_NAME: mspolyak-website_bebebe
+  IMAGE_NAME: ${{ github.repository }}
+  
+on:
+  workflow_dispatch:
+  
+jobs: 
+  build:
+    name: image build
+    runs-on: self-hosted
+    steps:
+      - name: checking for actual
+        uses: actions/checkout@v2.4.0
+        with:
+          path: .
+        
+      - name: building
+        run: docker build -t bebebe .
+        
+      - name: running
+        run: docker run --name ${{env.CONTAINER_NAME}} --rm -d -p 4001:80 bebebe
