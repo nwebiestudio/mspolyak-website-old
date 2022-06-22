@@ -4,9 +4,6 @@ services:
         container_name: msp-website-nginx
         image: ghcr.io/nwebiestudio/mspolyak-website:main
         restart: always
-        build:
-            context: ./
-            dockerfile: ./nginx/Dockerfile
         environment:
          - VIRTUAL_HOST=mspolyak.ru # Enviroment variable needed for nginx proxy
          - LETSENCRYPT_HOST=mspolyak.ru # Enviroment variables needed for Let's Encrypt companion
