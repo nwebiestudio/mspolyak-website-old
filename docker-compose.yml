@@ -16,4 +16,4 @@ services:
 networks:
     nginx-proxy:
         external:
-            name: proxy_nginx-proxy # Reference our network that was created by Docker Compose when we launched our two main containers earlier. Name generated automaticaly. Use `docker network ls` to list all networks and their names.
+            name: nginx-proxy_nginx-proxy # Reference our network that was created by Docker Compose when we launched our two main containers earlier. Name generated automaticaly. Use `docker network ls` to list all networks and their names.
