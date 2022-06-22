@@ -1,0 +1,22 @@
+version: '3'
+services:
+    nginx:
+        container_name: msp-website-nginx
+        image: ghcr.io/nwebiestudio/mspolyak-website:main
+        restart: always
+        build:
+            context: ./
+            dockerfile: ./nginx/Dockerfile
+        environment:
+         - VIRTUAL_HOST=mspolyak.ru # Enviroment variable needed for nginx proxy
+         - LETSENCRYPT_HOST=mspolyak.ru # Enviroment variables needed for Let's Encrypt companion
+         - LETSENCRYPT_EMAIL=admin@mspolyak.ru
+        expose:
+         - "80" # Expose http port
+         - "443" # along with https port
+        networks:
+         - nginx-proxy # Connect this container to network named nginx-proxy, that will be described below
+networks:
+    nginx-proxy:
+        external:
+            name: proxy_nginx-proxy # Reference our network that was created by Docker Compose when we launched our two main containers earlier. Name generated automaticaly. Use `docker network ls` to list all networks and their names.

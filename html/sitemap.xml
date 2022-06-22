@@ -3,79 +3,159 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
    <url>
-
-      <loc>https://mspolyak.ru/index.html</loc>
-
-      <lastmod>2022-03-23</lastmod>
-
-      <changefreq>monthly</changefreq>
-
-   </url>
-
-    <url>
-
-      <loc>https://mspolyak.ru/publications.html</loc>
-
-      <lastmod>2022-03-23</lastmod>
-
-      <changefreq>monthly</changefreq>
-
-   </url>
-
-    <url>
-
-      <loc>https://mspolyak.ru/culture_media_2008_book.html</loc>
-
-      <lastmod>2022-03-23</lastmod>
-
-   </url>
-
-    <url>
-
-      <loc>https://mspolyak.ru/antibiotics_toc_rus.html</loc>
-
-      <lastmod>2022-03-23</lastmod>
-
-   </url>
-
-    <url>
-
-      <loc>https://mspolyak.ru/antibiotics_toc_eng.html</loc>
-
-      <lastmod>2022-03-23</lastmod>
-
-   </url>
-
-   <url>
-
-      <loc>https://mspolyak.ru/antibiotics_laboratory_book.html</loc>
-
-      <lastmod>2022-03-23</lastmod>
-
-   </url>
-
-   <url>
-
-      <loc>https://mspolyak.ru/antibiotics_in_ophthalmology.html</loc>
-
-      <lastmod>2022-03-23</lastmod>
-
-   </url>
-
-   <url>
-
-      <loc>https://mspolyak.ru/antibiotic_therapy_theory_and_practice_book.html</loc>
-
-      <lastmod>2022-03-23</lastmod>
-
-   </url>
-
-   <url>
-
-      <loc>https://mspolyak.ru/antibiotic_therapy_of_problematic_infections.html</loc>
-
-      <lastmod>2022-03-23</lastmod>
-
-   </url>
+<loc>https://mspolyak.ru/</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/publications.html</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/combined_antibiotic_therapy.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/antibiotics_in_treatment_of_anaerobes.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/present_day_problems_of_antibiotic_therapy_in_ophthalmology.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/antibiotics_in_ophthalmology.html</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/antibiotic_therapy_of_problematic_infections.html</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/antibiotics_laboratory_book.html</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/antibiotic_therapy_theory_and_practice_book.html</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/antibiotics_toc_eng.html</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/culture_media_2008_book.html</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/basic_antibiotic_therapy_2003.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/culture_medium_2002.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/antibiotic_therapy_of_problematic_infections_full.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_full.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/antibiotic_therapy_theory_and_practice.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/index.html</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/role_of_bacteriological_service_2014.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/antibiotics_in_ophthalmology_toc.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/antibiotics_in_ophthalmology_ch1.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/antibiotic_therapy_of_problematic_infections_toc.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/antibiotic_therapy_of_problematic_infections_foreword.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_toc.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_foreword.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_ch2.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_ch3.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_ch4.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_ch5.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_ch6.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_ch7.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://mspolyak.ru/books/laboratory_support_ch8.pdf</loc>
+<lastmod>2022-03-23T20:04:19+00:00</lastmod>
+<priority>0.64</priority>
+</url>
 
 </urlset> 

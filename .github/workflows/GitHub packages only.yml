@@ -1,4 +1,4 @@
-name: Github packages watchtower
+name: docker-compose
  
 on:
   workflow_dispatch:
@@ -41,6 +41,25 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  compose_up:
+    name: Docker-compose up
+    runs-on: self-hosted
+    needs: build-and-push
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          path: ./docker-compose.yml
+
+      - name: Pull latest
+        run: docker pull ghcr.io/nwebiestudio/mspolyak-website:main
+
+      - name: Docker-compose up
+        run: docker-compose up -d --force-recreate
+
+      - name: Remove dangling-images
+        run: dng=$(docker images -f "dangling=true" -q | wc -l); if [[ $dng != 0 ]] ; then docker rmi -f $(docker images -f "dangling=true" -q); else echo "No danglings found"; fi
   
 
 
